@@ -1,0 +1,63 @@
+html {
+  font-size: 20px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 20px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+
+
+body {
+    margin-bottom: 60px;
+    background-color: #e0007a;
+}
+
+h1 { 
+    color: #ffd800;
+}
+
+h4{ 
+    color: #ffd800;
+}
+
+#logo {
+   width: 300px; 
+}
+
+#MoviesList{
+    margin-top:50px
+}
+#MoviesList tr{
+    background-color: lightgrey;
+    color: #ff0000;
+}
+
+p {
+    color: #ffd800;
+}
+#ConfectionaryList tr{
+    background-color: lightgray;
+    color: #ff0000;
+}
+
+a {
+    color: white; 
+}
+
+#MoviesList a {
+    color: black;
+}
+
+#ConfectionaryList a {
+    color: black; 
+}
+
+    

@@ -1,0 +1,60 @@
+﻿@model MvcMovie.Models.ConfectionaryViewModel;
+@{
+    ViewData["Title"] = "Confectionary";
+}
+
+    <h1>Confectionary</h1>
+
+    <p>
+    <a asp-action="Create">Create New</a>
+    </p>
+
+    <form asp-controller="Confectionary" asp-action="Index" method="get">
+    <p>
+        Title: <input type="text" name="SearchString" /> 
+        <input type="submit" value="Filter" /> 
+    </p>
+</form>
+
+    <table id="ConfectionaryList" class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ShopItems[0].ProductName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShopItems[0].ProductType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShopItems[0].Price)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.ShopItems) {
+        <tr id="ShopItem_@item.Id">
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductName)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductType)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+            }
+    </tbody>
+</table>
+
+    <p>
+    <a asp-action="Index" asp-controller="Movies">Movies page</a>
+    <a href="/movies"> Google</a>
+    </p>
